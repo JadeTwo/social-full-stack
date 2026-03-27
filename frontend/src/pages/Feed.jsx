@@ -9,7 +9,6 @@ function Feed() {
     const [posts, setPosts] = useState([])
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
-    console.log(posts)
 
     useEffect(() => {
         async function getData() {
@@ -77,8 +76,9 @@ function Feed() {
             
             {posts.map(post => 
                 <Post 
-                    post={post} 
                     key={post._id} 
+                    post={post} 
+                    setPosts={setPosts}
                 />
             )}
         </div>
